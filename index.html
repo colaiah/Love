@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love for Ria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 1s ease;
+        }
+
+        /* 💖 Login Page */
+        .login-container {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #ff4d4d;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.5);
+            color: #000;
+            font-size: 1.2em;
+            text-align: center;
+            outline: none;
+        }
+
+        .input-group input::placeholder {
+            color: #666;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        /* 💖 Love Page */
+        .love-page {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: linear-gradient(135deg, #ff6b6b, #ff9eb5);
+            position: relative;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .message-container {
+            max-width: 800px;
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message {
+            font-family: 'Pacifico', cursive;
+            font-size: 2em;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        /* 💖 Floating Hearts Animation */
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: red;
+            clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 50% 75%, 20% 100%, 0% 35%);
+            opacity: 0.7;
+            animation: floatUp 5s infinite linear;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh); opacity: 1; }
+            100% { transform: translateY(-10vh); opacity: 0; }
+        }
+
+        /* 💖 Theme Buttons */
+        .theme-buttons {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+        }
+
+        .theme-button {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        .theme-button:hover {
+            transform: scale(1.2);
+        }
+
+        .theme1 { background: url('https://upload.wikimedia.org/wikipedia/commons/3/3a/Red_heart_icon.svg') center/cover; }
+        .theme2 { background: url('https://upload.wikimedia.org/wikipedia/commons/e/e0/Pink_heart_icon.svg') center/cover; }
+        .theme3 { background: url('https://upload.wikimedia.org/wikipedia/commons/2/20/Heart_icon_red_hollow.svg') center/cover; }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>My Heart's Key 🔑</h1>
+        <div class="input-group">
+            <input type="text" id="username" placeholder="Our Secret Code">
+        </div>
+        <div class="input-group">
+            <input type="password" id="password" placeholder="Magic Words">
+        </div>
+        <button onclick="checkCredentials()">Unlock My Heart</button>
+    </div>
+
+    <div class="love-page">
+        <div class="message-container">
+            <div class="message">
+                <p>My Dearest Ria,</p>
+                <p>Every night, I look up at the same sky, knowing that somewhere beneath these stars, you're looking up too. The distance between us may stretch across miles, but my heart has never felt closer to yours.</p>
+                <p>I miss you in the simplest moments—when I wake up and reach for my phone hoping for your message, when I drink my coffee wishing you were here to share it, when I hear a song that reminds me of you and it suddenly feels like you're right next to me.</p>
+                <p>Love, being away from you has made me realize that the smallest things are the most precious—the way you say my name, your soft laughter, the warmth in your voice when you tell me you love me. I carry those moments with me everywhere, replaying them like my favorite song.</p>
+                <p>Every second apart is a second closer to the moment we’ll finally be together again. Until that day comes, I will keep holding on to every memory, every promise, and every ounce of love I have for you.</p>
+                <p>You are my heart’s greatest adventure, my greatest love, my home no matter where I am.</p>
+                <p>Forever and always,</p>
+                <p>Your bby ❤️</p>
+            </div>
+        </div>
+
+        <div class="theme-buttons">
+            <button class="theme-button theme1" onclick="changeTheme(1)"></button>
+            <button class="theme-button theme2" onclick="changeTheme(2)"></button>
+            <button class="theme-button theme3" onclick="changeTheme(3)"></button>
+        </div>
+    </div>
+
+    <script>
+        function checkCredentials() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === "riri" && password === "iloveyou") {
+                document.querySelector('.login-container').style.display = 'none';
+                document.querySelector('.love-page').style.display = 'flex';
+                setTimeout(() => {
+                    document.querySelector('.love-page').style.opacity = '1';
+                }, 100);
+            } else {
+                alert("Try again, my love ❤️");
+            }
+        }
+
+        function changeTheme(theme) {
+            const lovePage = document.querySelector('.love-page');
+            if (theme === 1) lovePage.style.background = "linear-gradient(135deg, #ff6b6b, #ff9eb5)";
+            if (theme === 2) lovePage.style.background = "linear-gradient(135deg, #6b8cff, #9eb5ff)";
+            if (theme === 3) lovePage.style.background = "linear-gradient(135deg, #6bff8c, #9effb5)";
+        }
+    </script>
+</body>
+</html>
